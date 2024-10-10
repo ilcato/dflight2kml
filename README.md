@@ -1,5 +1,15 @@
 # Simple utility to convert d-flight UAS Geo Zone to KML
 
+# Installation
+
+1. Ensure you have Python 3.6 or newer installed.
+2. Clone this repository or download the source code.
+3. Install the required packages:
+
+```
+pip install -r requirements.txt
+```
+
 # Usage
 
 ```
