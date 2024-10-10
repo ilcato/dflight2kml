@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File with Arguments",
+            "name": "dflight2kml",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "main.py",
             "console": "integratedTerminal",
-            "args": ["dflight_geozones_20241010_073201.json", "output.kml"]
+            "args": ["dflight_geozones_20241010_073201.json", "output.kml", "--project", "Project1"]
         }
     ]
 }
