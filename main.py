@@ -32,13 +32,13 @@ class DroneZoneConverter:
 
     def get_altitude_by_lower_limit(self, lower_limit: int) -> int:
         if lower_limit == 60:
-            return 102
+            return 250
         elif lower_limit == 45:
-            return 101
+            return 500
         elif lower_limit == 25:
-            return 100
+            return 750
         else:  # lower_limit == 0 or any other value
-            return 103
+            return 1000
 
     def add_feature_to_kml(self, feature: Dict):
         name = feature.get('name', 'Unnamed Zone')
