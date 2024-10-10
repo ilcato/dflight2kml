@@ -74,7 +74,7 @@ class DroneZoneConverter:
         self.process_features(data.get('features', []))
         self.kml.save(self.output_file)
 
-def open_in_google_earth(kml_file: str, project_name: str):
+def open_in_google_earth(kml_file: str):
     # Ensure the file path is absolute
     kml_file_abs = os.path.abspath(kml_file)
     
@@ -119,16 +119,16 @@ def main():
     parser = argparse.ArgumentParser(description="Convert D-Flight geozones to KML for Google Maps")
     parser.add_argument("input_file", help="Path to the input JSON file")
     parser.add_argument("output_file", help="Path to the output KML file")
-    parser.add_argument("--project", help="Google Earth Web project name (optional)")
+    parser.add_argument("--open", action="store_true", help="Open the KML file in Google Earth Pro after conversion")
     args = parser.parse_args()
 
     converter = DroneZoneConverter(args.input_file, args.output_file)
     converter.convert()
     print(f"Conversion complete. KML file saved as {args.output_file}")
 
-    if args.project:
-        open_in_google_earth(args.output_file, args.project)
-        print(f"Attempting to open in Google Earth Pro with project: {args.project}")
+    if args.open:
+        open_in_google_earth(args.output_file)
+        print("Attempting to open in Google Earth Pro")
 
 if __name__ == "__main__":
     main()
